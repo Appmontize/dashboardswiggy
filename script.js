@@ -19,18 +19,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const cityCell = document.createElement('td');
             const phoneCell = document.createElement('td');
             const created_atCell = document.createElement('td');
+            const sourceCell = document.createElement('td');
 
             serialCell.textContent = index + 1; // Display serial number
             nameCell.textContent = partner.name;
             cityCell.textContent = partner.city;
             phoneCell.textContent = partner.phone;
             created_atCell.textContent = partner.created_at;
+            sourceCell.textContent = partner.source;
 
             row.appendChild(serialCell);
             row.appendChild(nameCell);
             row.appendChild(cityCell);
             row.appendChild(phoneCell);
             row.appendChild(created_atCell);
+            row.appendChild(sourceCell);
 
             table.appendChild(row);
         });
