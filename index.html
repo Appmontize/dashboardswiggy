@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiggy Delivery Partner Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-items1">Swiggy Delivery Partner Dashboard Appmontize Media</div>
+        <div class="nav-items"></div>
+    </nav>
+
+    <main>
+        <section class="dashboard">
+            <h1>Registered Delivery Partners</h1>
+            <div class="button-container">
+                <button id="sort-by-phone">Sort by Phone Number (Remove duplicates)</button>
+                <button id="download-csv">Download Sheet (in csv)</button>
+            </div>
+            <div class="date-filter">
+                <label for="start-date">Start Date:</label>
+                <input type="date" id="start-date">
+                <label for="end-date">End Date:</label>
+                <input type="date" id="end-date">
+                <button id="filter-date">Apply Date Range</button>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Serial No.</th>
+                            <th>Name</th>
+                            <th>City</th>
+                            <th>Phone</th>
+                            <th>Date and Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="partners-table">
+                        <!-- Data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

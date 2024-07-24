@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff5722;
+    color: white;
+    padding: 15px;
+}
+
+.nav-items a {
+    color: white;
+    text-decoration: none;
+
+}
+
+.dashboard {
+    padding: 20px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row; /* Align items in a row */
+    justify-content: space-between; /* Align items to the left side */
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e64a19;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #ff5722;
+    color: white;
+}
+
+/* Media query for screens 768px and below */
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Adjust space between buttons */
+        align-items: center; /* Center buttons horizontally */
+    }
+
+    .navbar {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .nav-items {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column; /* Stack nav links vertically */
+    }
+
+    .nav-items a {
+        margin: 5px 0; /* Add vertical margin between links */
+    }
+}
