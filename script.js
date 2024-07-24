@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     let originalData = [];
-    let processedData = [];
     let isSorted = false;
 
     const fetchData = () => {
@@ -25,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nameCell.textContent = partner.name;
             cityCell.textContent = partner.city;
             phoneCell.textContent = partner.phone;
-            created_atCell.textContent = partner.created_at;
-            sourceCell.textContent = partner.source;
+            created_atCell.textContent = new Date(partner.created_at).toLocaleString(); // Format date
+            sourceCell.textContent = partner.source || 'Unknown'; // Default to 'Unknown' if source is empty
 
             row.appendChild(serialCell);
             row.appendChild(nameCell);
@@ -95,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const handleDownloadCsv = () => {
         const rows = document.querySelectorAll('table tr');
         let csvContent = '';
-        
+
         rows.forEach(row => {
             const cols = row.querySelectorAll('th, td');
             const rowArray = Array.from(cols).map(col => col.textContent);
@@ -113,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchData()
         .then(data => {
             originalData = data; // Save the original data
-            processedData = data; // Initialize processed data
             displayData(data);
 
             document.getElementById('sort-by-phone').addEventListener('click', handleSortByPhone);
